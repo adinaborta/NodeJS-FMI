@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "init": "^0.1.2",
     "jsonwebtoken": "^8.5.1",
-    "parse-body": "^1.0.3"
+    "parse-body": "^1.0.3",
+    "sequelize": "^6.8.0",
+    "sequelize-cli": "^6.2.0",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
   }
 }

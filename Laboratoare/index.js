@@ -5,7 +5,13 @@ const jwt = require("jsonwebtoken");
 
 const findUser = require("./helpers/findUser");
 const authorizationMiddleware = require("./midlewares/authorization");
-
+const {
+  getAllUsers,
+  getUserById,
+  deleteUser,
+  updateUser,
+  createUser,
+} = require("./controllers/users");
 const app = express();
 app.use(bodyParser.json());
 
@@ -30,6 +36,12 @@ app.post("/login", (req, res) => {
 app.get("/", authorizationMiddleware, (req, res) => {
   res.send("Hello world!");
 });
+
+app.get("/users", getAllUsers);
+app.get("/users/:id", getUserById);
+app.post("/users", createUser);
+app.put("/users/:id", updateUser);
+app.delete("/users/:id", deleteUser);
 
 app.listen(port, () => {
   console.log("Server started on", port);
